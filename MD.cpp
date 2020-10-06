@@ -13,14 +13,22 @@ int n = 100;
 double r[3][3] = {{0, 0, 0},
                   {1, 1, 1},
                   {2, 2, 2}};
+
+using namespace std;
+void show_vector( vector<double >&a)
+{
+    for (auto it = a.begin() ; it != a.end() ; ++it)
+        cout<<*it<<" ";
+}
+
 int main(){
     vector <double>  e;
     for (int i=0;i<=3;++i){
         for (int j=0;j<=3;++j){
             r[i][j] = sqrt((r[j] - r[i]) * (r[j] - r[i])+(r[j+1] - r[i]) * (r[j+1] - r[i]));
             e.push_back(r[i][j]);
-
-    }
+            show_vector(e);
+        }
 }
    return 0;
 }
