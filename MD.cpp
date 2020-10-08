@@ -9,10 +9,9 @@ double vx1, vx2, vx3 ,vy1, vy2, vy3, vz1, vz2, vz3;
 double const G = 1;
 double m1, m2, m3;
 int n = 100;
-double r[4][3] = {{0, 0, 0},
+double r[3][3] = {{0, 0, 0},
                   {1, 1, 1},
-                  {3, 3, 3},
-                  {4, 4, 4}};
+                  {3, 3, 3}};
 
 using namespace std;
 
@@ -27,10 +26,11 @@ int main(){
     double r_prom;
 
     for (int i = 0; i < 3; ++i){
-      for (int j = 0; j < 2; ++j){
-        if (int i != j){
-        r_prom = sqrt(pow(r[i + 1][j] - r[i][j], 2) + pow(r[i + 1][j] - r[i][j], 2) + pow(r[i + 1][j] - r[i][j], 2));
-        e.push_back(r_prom);
+      for (int j = 0; j < 3; ++j){
+        if (i != j){
+            r_prom = (pow(r[j][0] - r[i][0], 2) + pow(r[j][1] - r[i][1], 2) + pow(r[j][2] - r[i][2], 2));
+            cout << r_prom << ' ';
+            e.push_back(r_prom);
         }
     }
     }
