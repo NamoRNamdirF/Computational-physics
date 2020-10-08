@@ -26,9 +26,13 @@ int main(){
     vector <double>  e;
     double r_prom;
 
-    for (int i = 0; i <= 3; ++i){
-        r_prom = sqrt(pow(r[i + 1][0] - r[i][0], 2) + pow(r[i + 1][1] - r[i][1], 2) + pow(r[i + 1][2] - r[i][2], 2));
+    for (int i = 0; i < 3; ++i){
+      for (int j = 0; j < 2; ++j){
+        if (int i != j){
+        r_prom = sqrt(pow(r[i + 1][j] - r[i][j], 2) + pow(r[i + 1][j] - r[i][j], 2) + pow(r[i + 1][j] - r[i][j], 2));
         e.push_back(r_prom);
+        }
+    }
     }
     show_vector(e);
     return 0;
